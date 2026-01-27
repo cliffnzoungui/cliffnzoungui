@@ -1,16 +1,15 @@
-## Hi there 👋
+# Portfolio de Cliff Nzoungui
 
-<!--
-**cliffnzoungui/cliffnzoungui** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Bienvenue sur mon portfolio ! 👋
 
-Here are some ideas to get you started:
+Ici, vous trouverez mes projets, certifications et travaux personnels réalisés dans le cadre de mes études en informatique et cybersécurité.  
+Chaque projet est accompagné de fichiers PDF,  programmation et sécurité informatique.et des certifs justifiant mes complétences 
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+N'hésitez pas à parcourir les différents dossiers pour découvrir mes réalisations.  
+
+## Contenu
+- `assets/certifs/` : Mes certifications (C++, JavaScript, etc.)  
+- `projects/` : Mes projets personnels et académiques  
+- `README.md` : Présentation générale du portfolio  
+
+Merci de votre visite !  
