@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliff Nz | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="hero">
+    <div class="top-bar">
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+  <span class="icon sun">🌞</span>
+  <span class="icon moon">🌚</span>
+</button>
+    </div>
+    <img src="assets/certifs/image.png" class="profile">
+    <h1>Cliff Nz</h1>
+    <p>ELEVE INGENIEUR INFORMATIQUE EN 4EME ANNEE SYSTEM ET RESEAU EMSI MAROC </p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">Projets</a>
+      <a href="#certifs" class="btn outline">Certifications</a>
+      <a href="assets/certifs/CV.pdf" class="btn" download>CV</a>
+    </div>
+  </header>
+
+  <section id="projects" class="section">
+    <h2>Projets/Expériences pro :</h2>
+    <p>Voici quelques projets et expériences professionnelles que j'ai réalisées durant mes études et mes stages.</p>
+    <br>
+
+
+    <div class="grid">
+      <a href="projects/projet1.html" class="card" data-aos="fade-up">
+        <h3>Développement d’une application de signalisation d'incidents:</h3>
+        <h4>Description:</h4>
+        <p></p>
+        <p>Conception et réalisation d’une application interne permettant auxemployés de déclarer rapidement les
+          incidents </p>
+      </a>
+      <a href="projects/projet2.html" class="card" data-aos="fade-up">
+        <h3>Application C++</h3>
+        <h4>Description:</h4>
+        <p>Gestion bancaire POO</p>
+      </a>
+      <a href="projects/projet3.html" class="card" data-aos="fade-up">
+        <h3>Stage application Entreprise Laboratoire Pluridisciplinaire de la Recherche et de l’Innovation,
+          Casablanca-Maroc: </h3>
+        <h4>Description:</h4>
+        <p>Modernisation de l'infrastructure réseau de l’entreprise </p>
+      </a>
+      <a href="projects/projet4.html" class="card" data-aos="fade-up">
+        <h3>Stage application Entreprise Lesieur Cristal, Casablanca-Maroc</h3>
+        <h4>Description:</h4>
+        <p> Développement d’une application de gestion de contrat</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="certifs" class="section">
+    <h2>Certifications</h2>
+    <div class="grid">
+      <div class="card certif" onclick="openCertif('assets/certifs/ENGLISH.pdf')">
+        <h3> BUSINESS ENGLISH:</h3>
+        <br>
+
+        <p>PDF protégé ⚠️</p>
+      </div>
+      <div class="card certif" onclick="openCertif('assets/certifs/js.pdf')">
+        <h3>Interactivity with JavaScript</h3>
+        <br>
+        <p>PDF protégé ⚠️</p>
+      </div>
+      <div class="card certif" onclick="openCertif('assets/certifs/C++.pdf')">
+        <h3>la programmation orientée objet(en C++)</h3>
+          <br>
+        <p>PDF protégé ⚠️</p>
+      </div>
+      <div class="card certif" onclick="openCertif('assets/certifs/Virtualisation.pdf')">
+        <h3>Virtualisation cloud engineer</h3>  
+        <br>
+        <p>PDF protégé ⚠️</p>
+      </div>
+      <div class="card certif" onclick="openCertif('assets/certifs/dev_js.pdf')">
+        <h3>Développement application avec JavaScript avancée</h3>
+        <br>
+        <p>PDF protégé ⚠️</p>
+      </div>
+      <div class="card certif" onclick="openCertif('assets/certifs/Comptia+.pdf')">
+        <h3>Introduction comptia security+</h3>
+        <br>
+        <p>PDF protégé ⚠️</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Cliff Nz</footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

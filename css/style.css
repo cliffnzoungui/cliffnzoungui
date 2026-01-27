@@ -1,0 +1,213 @@
+:root {
+  --bg: #020617;
+  --text: #e5e7eb;
+  --card: #0f172a;
+  --accent: #6366f1;
+}
+
+body.light {
+  --bg: #f8fafc;
+  --text: #020617;
+  --card: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ================= THEME TOGGLE (MODERNE) ================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 56px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle .icon {
+  font-size: 14px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-toggle .sun {
+  margin-left: 2px;
+}
+
+.theme-toggle .moon {
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+body.light .theme-toggle {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.light .sun {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body.light .moon {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+body:not(.light) .sun {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+body:not(.light) .moon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #6366f1, #2563eb);
+}
+
+.top-bar {
+  text-align: right;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin: 1rem auto;
+  object-fit: cover;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: white;
+  color: #2563eb;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  min-width: 140px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= GRID / CARDS ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #020617;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 📱 Mobiles */
+@media (max-width: 600px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .profile {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 85%;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+/* 📲 Tablettes */
+@media (max-width: 768px) {
+  .btn {
+    width: 45%;
+  }
+}
+
+/* 💻 Laptops */
+@media (max-width: 1024px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+}

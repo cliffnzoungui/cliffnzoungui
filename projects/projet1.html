@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Développement d’une application de signalisation d'incidents</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Styles spécifiques pour la page projet */
+    body.project-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Poppins, Arial, sans-serif;
+    }
+
+    body.project-page .content {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    body.project-page h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    body.project-page p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    body.project-page .btn.retour {
+      align-self: center; /* centré horizontalement */
+      margin: 2rem 0;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: white;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    body.project-page .btn.retour:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      body.project-page h1 { font-size: 1.7rem; }
+      body.project-page p { font-size: 0.95rem; }
+    }
+
+    @media (max-width:480px){
+      body.project-page h1 { font-size: 1.5rem; }
+      body.project-page p { font-size: 0.9rem; }
+      body.project-page .btn.retour { padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body class="project-page">
+  <div class="content">
+    <h1>Développement d’une application de signalisation d'incidents</h1>
+    <p>Conception et réalisation d’une application interne permettant aux employés de déclarer rapidement les incidents techniques liés aux installations de l’entreprise.</p>
+    <p>Mise en place d’une interface utilisateur simple pour la saisie d’incidents, système de gestion des statuts (nouveau, en cours, résolu), et notifications automatiques aux responsables techniques.</p>
+    <p>Technologies utilisées : Java, MySQL.</p>
+  </div>
+
+  <a href='../index.html' class='btn retour'>Retour</a>
+</body>
+</html>
