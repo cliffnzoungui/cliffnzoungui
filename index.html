@@ -17,6 +17,7 @@
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Projets</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#certifs">Certif</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -36,6 +37,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <a href="#home"     onclick="closeMobileMenu()">Home</a>
     <a href="#projects" onclick="closeMobileMenu()">Projets</a>
+    <a href="#skills"   onclick="closeMobileMenu()">Skills</a>
     <a href="#certifs"  onclick="closeMobileMenu()">Certif</a>
     <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
   </div>
@@ -165,6 +167,103 @@
         </div>
       </a>
 
+      <!-- ── NOUVEAU PROJET ── -->
+      <a href="projects/projet5.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Stage</div>
+        <div class="project-icon">📡</div>
+        <h3>Infrastructure de Supervision de Serveurs Web</h3>
+        <p>Mise en place d'une solution complète de monitoring et d'alerting pour superviser l'état de serveurs web en temps réel. Déploiement de Zabbix et Grafana pour la collecte de métriques et la visualisation des performances.</p>
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🔍</span><span>Zabbix</span></div>
+          <div class="stack-item"><span class="stack-icon">📊</span><span>Grafana</span></div>
+          <div class="stack-item"><span class="stack-icon">🔥</span><span>Prometheus</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Monitoring</span>
+          <span class="tag green">SNMP</span>
+          <span class="tag purple">DevOps</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── COMPÉTENCES ── -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <div class="section-tag">// 02 — stack technique</div>
+      <h2 class="section-title">Compétences & Technologies</h2>
+      <p class="section-desc">Les outils et langages que j'ai utilisés en projet et en stage.</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🌐</span>
+          Réseaux & Systèmes
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">Cisco IOS</div>
+          <div class="skill-pill">VLAN / VPN</div>
+          <div class="skill-pill">TCP/IP</div>
+          <div class="skill-pill">SNMP</div>
+          <div class="skill-pill">DNS / DHCP</div>
+          <div class="skill-pill">Linux</div>
+          <div class="skill-pill">Windows Server</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">📡</span>
+          Supervision & Monitoring
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill active">Zabbix</div>
+          <div class="skill-pill active">Grafana</div>
+          <div class="skill-pill active">Prometheus</div>
+          <div class="skill-pill">Nagios</div>
+          <div class="skill-pill">Alerting</div>
+          <div class="skill-pill">Dashboards</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">💻</span>
+          Développement
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">JavaScript</div>
+          <div class="skill-pill">C++</div>
+          <div class="skill-pill">HTML / CSS</div>
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">Bash / Shell</div>
+          <div class="skill-pill">SQL</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">☁️</span>
+          Cloud & Virtualisation
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">VMware</div>
+          <div class="skill-pill">VirtualBox</div>
+          <div class="skill-pill">Docker</div>
+          <div class="skill-pill">Hyper-V</div>
+          <div class="skill-pill">Cloud Computing</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -173,7 +272,7 @@
   <!-- ── CERTIFICATIONS ── -->
   <section id="certifs">
     <div class="section-header reveal">
-      <div class="section-tag">// 02 — diplômes</div>
+      <div class="section-tag">// 03 — diplômes</div>
       <h2 class="section-title">Certifications</h2>
       <p class="section-desc">Entrez le mot de passe <code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">recrute_moi</code> pour consulter un certificat.</p>
     </div>
@@ -313,7 +412,7 @@
   <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="section-header reveal">
-      <div class="section-tag">// 03 — contact</div>
+      <div class="section-tag">// 04 — contact</div>
       <h2 class="section-title">Travaillons ensemble</h2>
       <p class="section-desc">Stage, alternance, ou juste un bonjour — je suis disponible.</p>
     </div>
@@ -321,10 +420,9 @@
 
       <div class="contact-info reveal">
         <h3>Restons en contact</h3>
-        <p>Je suis à la recherche d’un stage ou d’une alternance dans les domaines de l’administration système,
-          de la gestion des serveurs, des réseaux et de la cybersécurité. Je reste à votre disposition pour toute information complémentaire ou échange.</p>
+        <p>Je suis à la recherche d'un stage ou d'une alternance dans les domaines de l'administration système, de la gestion des serveurs, des réseaux et de la cybersécurité. Je reste à votre disposition pour toute information complémentaire ou échange.</p>
         <div class="contact-links">
-          <a href="mailto:cliff@example.com" class="contact-link">
+          <a href="mailto:cliffnzoungui1@gmail.com" class="contact-link">
             <div class="contact-link-icon">📧</div>
             <span>cliffnzoungui1@gmail.com</span>
           </a>
@@ -332,9 +430,9 @@
             <div class="contact-link-icon">💼</div>
             <span>linkedin.com/in/cliff-nz</span>
           </a>
-          <a href="https://github.com/cliff-nz" class="contact-link" target="_blank">
+          <a href="https://github.com/cliffnzoungui" class="contact-link" target="_blank">
             <div class="contact-link-icon">🐙</div>
-            <span>https://github.com/cliffnzoungui</span>
+            <span>github.com/cliffnzoungui</span>
           </a>
           <a href="assets/certifs/cliffcv.pdf" class="contact-link" download="cliffcv.pdf">
             <div class="contact-link-icon">📄</div>
@@ -374,7 +472,7 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-    <span>© 2026</span> by Cliff Nz — Élève Ingénieur EMSI Maroc
+    <span>© 2026</span> by Cliff Nzoungui — Élève Ingénieur EMSI Maroc
   </footer>
 
   <script src="js/script.js"></script>
