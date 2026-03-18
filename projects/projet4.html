@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application C++ – Gestion bancaire POO</title>
+  <title>Application de gestion de contrats — Lesieur Cristal</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* Styles spécifiques pour la page projet */
     body.project-page {
       display: flex;
       flex-direction: column;
@@ -16,23 +15,42 @@
       color: var(--text);
       font-family: Poppins, Arial, sans-serif;
     }
-
     body.project-page .content {
       flex: 1;
       max-width: 900px;
       margin: 0 auto;
     }
-
     body.project-page h1 {
       margin-bottom: 1.5rem;
       font-size: 2rem;
     }
-
+    body.project-page h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent, #38bdf8);
+    }
     body.project-page p {
       margin-bottom: 1rem;
       line-height: 1.6;
     }
-
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .tool-pill span.icon { font-size: 1.1rem; }
     body.project-page .btn.retour {
       align-self: center;
       margin: 2rem 0;
@@ -44,17 +62,13 @@
       font-weight: bold;
       transition: transform 0.3s;
     }
-
     body.project-page .btn.retour:hover {
       transform: translateY(-5px);
     }
-
-    /* Responsive */
     @media (max-width:768px){
       body.project-page h1 { font-size: 1.7rem; }
       body.project-page p { font-size: 0.95rem; }
     }
-
     @media (max-width:480px){
       body.project-page h1 { font-size: 1.5rem; }
       body.project-page p { font-size: 0.9rem; }
@@ -64,18 +78,27 @@
 </head>
 <body class="project-page">
   <div class="content">
-    <h1>Développement d’une application de gestion de contrat :</h1>
-<p>
-<p>
-Développement d’une application de gestion de contrats permettant de centraliser, créer et suivre l’ensemble des contrats d’une organisation. 
-Mise en place de fonctionnalités telles que l’enregistrement des contrats, la gestion des échéances, le suivi des renouvellements et l’archivage sécurisé des documents. 
-L’application intègre un système de recherche avancée, des droits d’accès selon les rôles utilisateurs et des notifications automatiques afin de réduire les risques d’oubli et d’améliorer la traçabilité. 
-Ce projet a permis d’optimiser la gestion administrative, de renforcer la conformité et de sécuriser les données contractuelles.
-</p>
 
-</p>
+    <h1>Application de gestion de contrats — Lesieur Cristal</h1>
+
+    <p>
+      Développement d'une application web permettant de centraliser, créer et suivre l'ensemble des contrats de l'entreprise.
+      L'application intègre la gestion des échéances, le suivi des renouvellements, un système de droits d'accès par rôle et des notifications automatiques pour améliorer la traçabilité et réduire les risques d'oubli.
+    </p>
+
+    <h2>Outils & Technologies utilisés</h2>
+    <div class="tools-grid">
+      <div class="tool-pill"><span class="icon">⚡</span> JavaScript</div>
+      <div class="tool-pill"><span class="icon">🌐</span> HTML / CSS</div>
+      <div class="tool-pill"><span class="icon">🖥️</span> PHP</div>
+      <div class="tool-pill"><span class="icon">🗄️</span> MySQL</div>
+      <div class="tool-pill"><span class="icon">🔐</span> Gestion des rôles (Auth)</div>
+      <div class="tool-pill"><span class="icon">📧</span> Notifications email</div>
+      <div class="tool-pill"><span class="icon">🔍</span> Recherche avancée</div>
+      <div class="tool-pill"><span class="icon">📁</span> Archivage de documents</div>
+    </div>
+
   </div>
-
   <a href='../index.html' class='btn retour'>Retour</a>
 </body>
 </html>
