@@ -1,107 +1,369 @@
+
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cliff Nz | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
-  <header class="hero">
-    <div class="top-bar">
-<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-  <span class="icon sun">🌞</span>
-  <span class="icon moon">🌚</span>
-</button>
-    </div>
-    <img src="assets/certifs/image.png" class="profile">
-    <h1>Cliff Nz</h1>
-    <p>ELEVE INGENIEUR INFORMATIQUE ET RESEAU EN 4EME ANNEE SYSTEM ET RESEAU EMSI MAROC </p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn">Projets</a>
-      <a href="#certifs" class="btn outline">Certifications</a>
-      <!-- Lien corrigé : chemin relatif + download forcé avec le bon nom -->
-      <a href="assets/certifs/cliffcv.pdf" class="btn" download="cliffcv.pdf">Télécharger CV</a>
-    </div>
-  </header>
-  <section id="projects" class="section">
-    <h2>Projets/Expériences pro :</h2>
-    <p>Voici quelques projets et expériences professionnelles que j'ai réalisées durant mes études et mes stages.</p>
-    <br>
 
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#home"><span>cliff</span>nz<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#certifs">Certif</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span>🌞</span>
+        <div class="toggle-knob"></div>
+        <span>🌙</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-    <div class="grid">
-      <a href="projects/projet1.html" class="card" data-aos="fade-up">
-        <h3>Développement d’une application de signalisation d'incidents:</h3>
-        <h4>Description:</h4>
-        <p></p>
-        <p>Conception et réalisation d’une application interne permettant auxemployés de déclarer rapidement les
-          incidents </p>
-      </a>
-      <a href="projects/projet2.html" class="card" data-aos="fade-up">
-        <h3>Application C++</h3>
-        <h4>Description:</h4>
-        <p>Gestion bancaire POO</p>
-      </a>
-      <a href="projects/projet3.html" class="card" data-aos="fade-up">
-        <h3>Stage application Entreprise Laboratoire Pluridisciplinaire de la Recherche et de l’Innovation,
-          Casablanca-Maroc: </h3>
-        <h4>Description:</h4>
-        <p>Modernisation de l'infrastructure réseau de l’entreprise </p>
-      </a>
-      <a href="projects/projet4.html" class="card" data-aos="fade-up">
-        <h3>Stage application Entreprise Lesieur Cristal, Casablanca-Maroc</h3>
-        <h4>Description:</h4>
-        <p> Développement d’une application de gestion de contrat</p>
-      </a>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home"     onclick="closeMobileMenu()">Home</a>
+    <a href="#projects" onclick="closeMobileMenu()">Projets</a>
+    <a href="#certifs"  onclick="closeMobileMenu()">Certif</a>
+    <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Disponible pour stage / alternance</div>
+      <div class="profile-ring">
+        <img
+          src="assets/certifs/image.png"
+          class="profile"
+          alt="Cliff Nz"
+          onerror="this.src='https://ui-avatars.com/api/?name=Cliff+Nz&size=140&background=38bdf8&color=060a12&bold=true&font-size=0.35'"
+        >
+      </div>
+      <h1>Cliff <span class="highlight">Nz</span></h1>
+
+      <!-- Nationalité + École -->
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="flag-icon">🇬🇦</span>
+          <span>Gabonais</span>
+        </div>
+        <div class="hero-meta-divider"></div>
+        <a href="https://www.emsi.ma" target="_blank" rel="noopener noreferrer" class="hero-meta-item hero-school-link">
+          <img
+            src="https://www.emsi.ma/wp-content/uploads/2021/03/logo-emsi.png"
+            alt="EMSI"
+            class="school-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+          >
+          <span class="school-logo-fallback" style="display:none;">🎓</span>
+          <span>EMSI Maroc</span>
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="opacity:0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+
+      <p class="hero-subtitle">Élève Ingénieur — Systèmes & Réseaux · 4ème année</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M3 17l9 6 9-6"/></svg>
+          Projets
+        </a>
+        <a href="#certifs" class="btn btn-ghost">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          Certifications
+        </a>
+        <a href="assets/certifs/cliffcv.pdf" class="btn btn-outline" download="cliffcv.pdf">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m-7-7l7 7 7-7"/></svg>
+          Télécharger CV
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
     </div>
   </section>
 
-  <section id="certifs" class="section">
-    <h2>Certifications</h2>
-    <div class="grid">
-      <div class="card certif" onclick="openCertif('assets/certifs/ENGLISH.pdf')">
-        <h3> BUSINESS ENGLISH:</h3>
-        <br>
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <div class="section-tag">// 01 — expériences</div>
+      <h2 class="section-title">Projets & Expériences pro</h2>
+      <p class="section-desc">Quelques projets réalisés durant mes études et mes stages.</p>
+    </div>
+    <div class="projects-grid">
 
-        <p>PDF protégé ⚠️</p>
+      <a href="projects/projet1.html" class="project-card reveal">
+        <div class="project-icon">📱</div>
+        <h3>Application de signalisation d'incidents</h3>
+        <p>Conception et réalisation d'une application interne permettant aux employés de déclarer rapidement les incidents en temps réel.</p>
+        <div class="project-tags">
+          <span class="tag">Web App</span>
+          <span class="tag green">Incident Mgmt</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <a href="projects/projet2.html" class="project-card reveal">
+        <div class="project-icon">💻</div>
+        <h3>Application C++ — Gestion Bancaire POO</h3>
+        <p>Application de gestion bancaire développée en C++ avec les principes de la programmation orientée objet.</p>
+        <div class="project-tags">
+          <span class="tag">C++</span>
+          <span class="tag purple">POO</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <a href="projects/projet3.html" class="project-card reveal">
+        <div class="project-icon">🌐</div>
+        <h3>Stage — LPRI · Casablanca</h3>
+        <p>Modernisation de l'infrastructure réseau du Laboratoire Pluridisciplinaire de la Recherche et de l'Innovation.</p>
+        <div class="project-tags">
+          <span class="tag">Réseaux</span>
+          <span class="tag green">Infrastructure</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <a href="projects/projet4.html" class="project-card reveal">
+        <div class="project-icon">📋</div>
+        <h3>Stage — Lesieur Cristal · Casablanca</h3>
+        <p>Développement d'une application de gestion de contrats pour automatiser les processus internes.</p>
+        <div class="project-tags">
+          <span class="tag">Full Stack</span>
+          <span class="tag purple">Gestion</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifs">
+    <div class="section-header reveal">
+      <div class="section-tag">// 02 — diplômes</div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-desc">Entrez le mot de passe <code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">recrute_moi</code> pour consulter un certificat.</p>
+    </div>
+    <div class="certifs-grid">
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🇬🇧</div>
+          <div>
+            <div class="certif-name">Business English</div>
+            <div class="certif-issuer">Certification Langue</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/ENGLISH.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
       </div>
-      <div class="card certif" onclick="openCertif('assets/certifs/js.pdf')">
-        <h3>Interactivity with JavaScript</h3>
-        <br>
-        <p>PDF protégé ⚠️</p>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">⚡</div>
+          <div>
+            <div class="certif-name">Interactivity with JavaScript</div>
+            <div class="certif-issuer">Développement Web</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/js.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
       </div>
-      <div class="card certif" onclick="openCertif('assets/certifs/C++.pdf')">
-        <h3>la programmation orientée objet(en C++)</h3>
-          <br>
-        <p>PDF protégé ⚠️</p>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🔷</div>
+          <div>
+            <div class="certif-name">Programmation OO en C++</div>
+            <div class="certif-issuer">Génie Logiciel</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/C++.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
       </div>
-      <div class="card certif" onclick="openCertif('assets/certifs/vr.pdf')">
-        <h3>Virtualisation cloud engineer</h3>  
-        <br>
-        <p>PDF protégé ⚠️</p>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">☁️</div>
+          <div>
+            <div class="certif-name">Virtualisation & Cloud Engineer</div>
+            <div class="certif-issuer">Infrastructure Cloud</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/vr.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
       </div>
-      <div class="card certif" onclick="openCertif('assets/certifs/dev_js.pdf')">
-        <h3>Développement application avec JavaScript avancée</h3>
-        <br>
-        <p>PDF protégé ⚠️</p>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🚀</div>
+          <div>
+            <div class="certif-name">JavaScript Avancé</div>
+            <div class="certif-issuer">Développement Application</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/dev_js.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
       </div>
-      <div class="card certif" onclick="openCertif('assets/certifs/Comptia+.pdf')">
-        <h3>Introduction comptia security+</h3>
-        <br>
-        <p>PDF protégé ⚠️</p>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🔐</div>
+          <div>
+            <div class="certif-name">Introduction CompTIA Security+</div>
+            <div class="certif-issuer">Cybersécurité</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/Comptia+.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <div class="section-tag">// 03 — contact</div>
+      <h2 class="section-title">Travaillons ensemble</h2>
+      <p class="section-desc">Stage, alternance, ou juste un bonjour — je suis disponible.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Restons en contact</h3>
+        <p>Je suis à la recherche d'opportunités de stage ou d'alternance dans les domaines des systèmes, réseaux et développement. N'hésitez pas à me contacter.</p>
+        <div class="contact-links">
+          <a href="mailto:cliff@example.com" class="contact-link">
+            <div class="contact-link-icon">📧</div>
+            <span>cliff@example.com</span>
+          </a>
+          <a href="https://linkedin.com/in/cliff-nz" class="contact-link" target="_blank">
+            <div class="contact-link-icon">💼</div>
+            <span>linkedin.com/in/cliff-nz</span>
+          </a>
+          <a href="https://github.com/cliff-nz" class="contact-link" target="_blank">
+            <div class="contact-link-icon">🐙</div>
+            <span>github.com/cliff-nz</span>
+          </a>
+          <a href="assets/certifs/cliffcv.pdf" class="contact-link" download="cliffcv.pdf">
+            <div class="contact-link-icon">📄</div>
+            <span>Télécharger mon CV</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="Votre nom">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="votre@email.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Bonjour Cliff, je souhaitais vous contacter au sujet de…"></textarea>
+        </div>
+        <button class="form-submit" onclick="handleContactForm(this)">Envoyer le message →</button>
       </div>
     </div>
   </section>
 
-  <footer>© 2026 by Cliff Nz</footer>
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© 2026</span> by Cliff Nz — Élève Ingénieur EMSI Maroc
+  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
   <script src="js/script.js"></script>
 </body>
-
 </html>
