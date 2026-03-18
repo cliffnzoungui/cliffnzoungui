@@ -50,7 +50,6 @@ function checkCertif(btn) {
   const path  = input.dataset.path;
   const val   = input.value.trim();
 
-  // Champ vide
   if (!val) {
     input.classList.add('error');
     msg.textContent = '⚠ Veuillez entrer le mot de passe.';
@@ -60,13 +59,12 @@ function checkCertif(btn) {
   }
 
   if (val === 'recrute_moi') {
-    // Succès
     input.classList.remove('error');
     input.classList.add('success');
     msg.textContent = '✓ Accès accordé — ouverture…';
     msg.className = 'certif-msg ok';
 
-    // Créer un <a> caché et le cliquer : bypass des bloqueurs de popups
+    // Bypass bloqueur de popups : créer un <a> et le cliquer
     const a = document.createElement('a');
     a.href = path;
     a.target = '_blank';
@@ -75,7 +73,6 @@ function checkCertif(btn) {
     a.click();
     document.body.removeChild(a);
 
-    // Reset après 3s
     setTimeout(() => {
       input.value = '';
       input.classList.remove('success');
@@ -84,7 +81,6 @@ function checkCertif(btn) {
     }, 3000);
 
   } else {
-    // Échec
     input.classList.add('error');
     msg.textContent = '✗ Mot de passe incorrect.';
     msg.className = 'certif-msg err';
@@ -93,22 +89,66 @@ function checkCertif(btn) {
   }
 }
 
-// Touche Entrée dans le champ mot de passe
+// Touche Entrée dans les champs mot de passe certif
 document.querySelectorAll('.certif-input').forEach(input => {
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
-      const btn = input.closest('.certif-input-row').querySelector('.certif-btn');
-      checkCertif(btn);
+      checkCertif(input.closest('.certif-input-row').querySelector('.certif-btn'));
     }
   });
 });
 
-// ── CONTACT FORM (feedback visuel) ──
-function handleContactForm(btn) {
-  btn.textContent = '✓ Message envoyé !';
-  btn.style.background = 'var(--accent3)';
-  setTimeout(() => {
-    btn.textContent = 'Envoyer le message →';
-    btn.style.background = '';
-  }, 3000);
+// ── CONTACT FORM — FORMSPREE (envoi réel par email) ──
+// 👉 N'oublie pas de remplacer TON_ID_FORMSPREE dans index.html
+//    par ton vrai ID obtenu sur https://formspree.io/register
+const contactForm = document.getElementById('contact-form');
+const feedback    = document.getElementById('form-feedback');
+const submitBtn   = document.getElementById('form-submit-btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // État chargement
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours…';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // ✅ Succès : cacher le formulaire, afficher confirmation
+        contactForm.style.display = 'none';
+        feedback.style.display = 'flex';
+        feedback.className = 'form-feedback success';
+        feedback.innerHTML = `
+          <div class="feedback-icon">✓</div>
+          <div>
+            <strong>Message envoyé !</strong>
+            <p>Merci, je vous répondrai dans les plus brefs délais.</p>
+          </div>
+        `;
+      } else {
+        throw new Error('Erreur serveur');
+      }
+
+    } catch (err) {
+      // ❌ Erreur : afficher message d'erreur
+      feedback.style.display = 'flex';
+      feedback.className = 'form-feedback error';
+      feedback.innerHTML = `
+        <div class="feedback-icon">✗</div>
+        <div>
+          <strong>Échec de l'envoi</strong>
+          <p>Vérifiez votre connexion ou contactez-moi directement par email.</p>
+        </div>
+      `;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Réessayer →';
+    }
+  });
 }
