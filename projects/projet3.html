@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Application C++ – Gestion bancaire POO</title>
+  <title>Modernisation de l'infrastructure réseau — LPRI</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* Styles spécifiques pour la page projet */
     body.project-page {
       display: flex;
       flex-direction: column;
@@ -16,23 +15,42 @@
       color: var(--text);
       font-family: Poppins, Arial, sans-serif;
     }
-
     body.project-page .content {
       flex: 1;
       max-width: 900px;
       margin: 0 auto;
     }
-
     body.project-page h1 {
       margin-bottom: 1.5rem;
       font-size: 2rem;
     }
-
+    body.project-page h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent, #38bdf8);
+    }
     body.project-page p {
       margin-bottom: 1rem;
       line-height: 1.6;
     }
-
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .tool-pill span.icon { font-size: 1.1rem; }
     body.project-page .btn.retour {
       align-self: center;
       margin: 2rem 0;
@@ -44,17 +62,13 @@
       font-weight: bold;
       transition: transform 0.3s;
     }
-
     body.project-page .btn.retour:hover {
       transform: translateY(-5px);
     }
-
-    /* Responsive */
     @media (max-width:768px){
       body.project-page h1 { font-size: 1.7rem; }
       body.project-page p { font-size: 0.95rem; }
     }
-
     @media (max-width:480px){
       body.project-page h1 { font-size: 1.5rem; }
       body.project-page p { font-size: 0.9rem; }
@@ -64,17 +78,28 @@
 </head>
 <body class="project-page">
   <div class="content">
-    <h1>Modernisation de l'infrastructure réseau de l’entreprise:</h1>
-<p>
-Participation à la refonte du réseau local en configurant des switchs managés et routeurs. 
-Mise en place de VLAN pour segmenter les flux, optimisation du trafic via les protocoles TCP/UDP, 
-et déploiement d’un pare-feu (pfSense) pour sécuriser l’accès aux ressources internes. 
-J’ai également configuré des règles NAT et VPN pour permettre un accès distant sécurisé aux employés, 
-mis en place la surveillance réseau avec SNMP et des alertes en temps réel, et documenté l’architecture réseau complète. 
-Le projet a permis d’améliorer la performance, la sécurité et la fiabilité du réseau tout en facilitant la maintenance.
-</p>
-  </div>
 
+    <h1>Modernisation de l'infrastructure réseau — LPRI</h1>
+
+    <p>
+      Refonte complète du réseau local de l'entreprise : configuration de switchs managés et routeurs, 
+      segmentation via VLAN, déploiement d'un pare-feu pfSense et mise en place d'un accès distant 
+      sécurisé par VPN. Surveillance réseau en temps réel et documentation de l'architecture complète.
+    </p>
+
+    <h2>Outils & Technologies utilisés</h2>
+    <div class="tools-grid">
+      <div class="tool-pill"><span class="icon">🔀</span> Switchs managés / Routeurs</div>
+      <div class="tool-pill"><span class="icon">🌐</span> VLAN</div>
+      <div class="tool-pill"><span class="icon">🛡️</span> pfSense (Pare-feu)</div>
+      <div class="tool-pill"><span class="icon">🔒</span> VPN</div>
+      <div class="tool-pill"><span class="icon">🔄</span> NAT</div>
+      <div class="tool-pill"><span class="icon">📡</span> SNMP</div>
+      <div class="tool-pill"><span class="icon">📶</span> TCP/UDP</div>
+      <div class="tool-pill"><span class="icon">🖧</span> Cisco IOS</div>
+    </div>
+
+  </div>
   <a href='../index.html' class='btn retour'>Retour</a>
 </body>
 </html>
