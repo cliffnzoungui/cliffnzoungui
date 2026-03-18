@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -319,6 +318,7 @@
       <p class="section-desc">Stage, alternance, ou juste un bonjour — je suis disponible.</p>
     </div>
     <div class="contact-grid">
+
       <div class="contact-info reveal">
         <h3>Restons en contact</h3>
         <p>Je suis à la recherche d'opportunités de stage ou d'alternance dans les domaines des systèmes, réseaux et développement. N'hésitez pas à me contacter.</p>
@@ -341,21 +341,33 @@
           </a>
         </div>
       </div>
+
+      <!-- ✅ FORMULAIRE FORMSPREE -->
+      <!-- 👉 Remplace TON_ID_FORMSPREE par ton ID obtenu sur formspree.io/register -->
       <div class="contact-form reveal">
-        <div class="form-group">
-          <label>Nom</label>
-          <input type="text" placeholder="Votre nom">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" placeholder="votre@email.com">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea placeholder="Bonjour Cliff, je souhaitais vous contacter au sujet de…"></textarea>
-        </div>
-        <button class="form-submit" onclick="handleContactForm(this)">Envoyer le message →</button>
+        <form id="contact-form" action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST">
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Bonjour Cliff, je souhaitais vous contacter au sujet de…" required></textarea>
+          </div>
+          <!-- Champ anti-spam invisible -->
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            Envoyer le message →
+          </button>
+        </form>
+        <!-- Message affiché après envoi -->
+        <div id="form-feedback" class="form-feedback" style="display:none;"></div>
       </div>
+
     </div>
   </section>
 
