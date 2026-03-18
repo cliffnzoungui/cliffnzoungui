@@ -6,7 +6,6 @@
   <title>Application C++ – Gestion bancaire POO</title>
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* Styles spécifiques pour la page projet */
     body.project-page {
       display: flex;
       flex-direction: column;
@@ -16,23 +15,42 @@
       color: var(--text);
       font-family: Poppins, Arial, sans-serif;
     }
-
     body.project-page .content {
       flex: 1;
       max-width: 900px;
       margin: 0 auto;
     }
-
     body.project-page h1 {
       margin-bottom: 1.5rem;
       font-size: 2rem;
     }
-
+    body.project-page h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent, #38bdf8);
+    }
     body.project-page p {
       margin-bottom: 1rem;
       line-height: 1.6;
     }
-
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .tool-pill span.icon { font-size: 1.1rem; }
     body.project-page .btn.retour {
       align-self: center;
       margin: 2rem 0;
@@ -44,17 +62,13 @@
       font-weight: bold;
       transition: transform 0.3s;
     }
-
     body.project-page .btn.retour:hover {
       transform: translateY(-5px);
     }
-
-    /* Responsive */
     @media (max-width:768px){
       body.project-page h1 { font-size: 1.7rem; }
       body.project-page p { font-size: 0.95rem; }
     }
-
     @media (max-width:480px){
       body.project-page h1 { font-size: 1.5rem; }
       body.project-page p { font-size: 0.9rem; }
@@ -64,13 +78,25 @@
 </head>
 <body class="project-page">
   <div class="content">
-    <h1>Application C++ – Gestion bancaire POO</h1>
-    <p>Développement d’une application de gestion de comptes bancaires, entièrement basée sur la programmation orientée objet en C++.</p>
-    <p>L’application permet de créer, modifier et supprimer des comptes clients, effectuer des dépôts et retraits, et consulter l’historique des transactions. L’architecture est conçue pour être modulaire et extensible, avec des classes pour les comptes, les transactions et les utilisateurs.</p>
-    <p>Des fonctionnalités supplémentaires incluent la vérification automatique des soldes, des notifications pour les transactions critiques, et un système simple de connexion avec authentification utilisateur.</p>
-    <p>Ce projet a permis de mettre en pratique les concepts de classes, héritage, encapsulation, et gestion des erreurs en C++, tout en respectant les bonnes pratiques de développement et de structuration du code.</p>
-  </div>
 
+    <h1>Application C++ — Gestion Bancaire POO</h1>
+
+    <p>
+      Développement d'une application console de gestion de comptes bancaires entièrement basée sur la programmation orientée objet en C++.
+      L'application permet de créer et gérer des comptes clients, effectuer des dépôts et retraits, consulter l'historique des transactions et s'authentifier via un système de connexion sécurisé.
+    </p>
+
+    <h2>Outils & Technologies utilisés</h2>
+    <div class="tools-grid">
+      <div class="tool-pill"><span class="icon">🔷</span> C++</div>
+      <div class="tool-pill"><span class="icon">🏗️</span> POO (Classes / Héritage)</div>
+      <div class="tool-pill"><span class="icon">🔒</span> Encapsulation</div>
+      <div class="tool-pill"><span class="icon">⚠️</span> Gestion des exceptions</div>
+      <div class="tool-pill"><span class="icon">📁</span> Fichiers (I/O)</div>
+      <div class="tool-pill"><span class="icon">🛠️</span> g++ / Makefile</div>
+    </div>
+
+  </div>
   <a href='../index.html' class='btn retour'>Retour</a>
 </body>
 </html>
