@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plateforme de Détection d’Intrusion avec Wazuh</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body.project-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Poppins, Arial, sans-serif;
+    }
+    body.project-page .content {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    body.project-page h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    body.project-page h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent, #38bdf8);
+    }
+    body.project-page p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .tool-pill span.icon { font-size: 1.1rem; }
+    body.project-page .btn.retour {
+      align-self: center;
+      margin: 2rem 0;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: white;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    body.project-page .btn.retour:hover {
+      transform: translateY(-5px);
+    }
+    @media (max-width:768px){
+      body.project-page h1 { font-size: 1.7rem; }
+      body.project-page p { font-size: 0.95rem; }
+    }
+    @media (max-width:480px){
+      body.project-page h1 { font-size: 1.5rem; }
+      body.project-page p { font-size: 0.9rem; }
+      body.project-page .btn.retour { padding: 10px 18px; }
+    }
+  </style>
+</head>
+<body class="project-page">
+  <div class="content">
+
+    <h1>Plateforme de Détection d’Intrusion avec Wazuh</h1>
+
+    <p>
+      Mise en place d'une solution complète de supervision de la sécurité des systèmes à l’aide de Wazuh.
+      Déploiement d’un environnement SIEM permettant la collecte centralisée des logs, l’analyse en temps réel
+      et la détection d’attaques telles que les tentatives de brute force SSH, les scans de ports et les attaques web.
+    </p>
+
+    <p>
+      Configuration d’agents sur des machines Linux afin de remonter les événements vers un serveur central.
+      Création de règles personnalisées pour détecter des comportements suspects et génération d’alertes
+      visualisables via un dashboard interactif.
+    </p>
+
+    <h2>Outils & Technologies utilisés</h2>
+    <div class="tools-grid">
+      <div class="tool-pill"><span class="icon">🛡️</span> Wazuh</div>
+      <div class="tool-pill"><span class="icon">📊</span> OpenSearch</div>
+      <div class="tool-pill"><span class="icon">📈</span> Wazuh Dashboard</div>
+      <div class="tool-pill"><span class="icon">🐧</span> Linux / Bash</div>
+      <div class="tool-pill"><span class="icon">📡</span> Syslog</div>
+      <div class="tool-pill"><span class="icon">🌐</span> SSH / HTTP</div>
+    </div>
+
+    <h2>Fonctionnalités mises en place</h2>
+    <p>
+      - Détection de brute force SSH basée sur la fréquence des tentatives de connexion échouées<br>
+      - Détection de scan de ports via les logs firewall<br>
+      - Détection de flood HTTP (type DDoS léger)<br>
+      - Surveillance des ressources système (CPU / RAM)<br>
+      - Centralisation et visualisation des alertes en temps réel
+    </p>
+
+  </div>
+  <a href='../index.html' class='btn retour'>Retour</a>
+</body>
+</html>
