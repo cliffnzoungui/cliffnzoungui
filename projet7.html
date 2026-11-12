@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyse des Flux Inter-Serveurs & Cartographie des Dépendances</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body.project-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 2rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Poppins, Arial, sans-serif;
+    }
+    body.project-page .content {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    body.project-page h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .project-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent2, #38bdf8);
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+    body.project-page h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.2rem;
+      color: var(--accent, #38bdf8);
+    }
+    body.project-page p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Outils regroupés par catégorie */
+    .tools-category { margin-bottom: 1.2rem; }
+    .tools-category-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 0.5rem;
+    }
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0.5rem;
+    }
+    .tool-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 10px;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .tool-pill span.icon { font-size: 1.1rem; }
+    .tool-pill small { font-weight: 400; opacity: 0.65; font-size: 0.75rem; }
+
+    /* Listes */
+    .feature-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+    .feature-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
+    }
+    .feature-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent, #38bdf8);
+    }
+
+    /* Tableaux */
+    .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .data-table th, .data-table td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(56,189,248,0.15);
+      vertical-align: top;
+    }
+    .data-table th {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .data-table code {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent2, #38bdf8);
+    }
+
+    /* Chiffres clés */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin: 1rem 0;
+    }
+    .stat-card {
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .stat-value {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent, #38bdf8);
+    }
+    .stat-label { font-size: 0.78rem; opacity: 0.75; margin-top: 4px; }
+
+    /* Chaîne de traitement */
+    .pipeline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 1rem 0;
+    }
+    .pipe-step {
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pipe-arrow { opacity: 0.5; }
+
+    body.project-page .btn.retour {
+      align-self: center;
+      margin: 2rem 0;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background: white;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+    body.project-page .btn.retour:hover { transform: translateY(-5px); }
+
+    @media (max-width:768px){
+      body.project-page h1 { font-size: 1.7rem; }
+      body.project-page p { font-size: 0.95rem; }
+    }
+    @media (max-width:480px){
+      body.project-page h1 { font-size: 1.5rem; }
+      body.project-page p { font-size: 0.9rem; }
+      body.project-page .btn.retour { padding: 10px 18px; }
+      .tool-pill { padding: 6px 12px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body class="project-page">
+  <div class="content">
+
+    <h1>Analyse des Flux Inter-Serveurs & Cartographie des Dépendances</h1>
+    <div class="project-meta">📅 Stage 4ème année · 2025 – 2026 · Sécurité des Systèmes et Réseaux</div>
+
+    <p>
+      Conception d'une plateforme d'analyse des flux de communication entre serveurs afin de cartographier
+      les dépendances applicatives et de préparer la micro-segmentation d'une infrastructure on-premise.
+      L'objectif : savoir précisément « qui parle à qui, sur quel port et pourquoi » avant de restreindre
+      les communications.
+    </p>
+
+    <p>
+      L'ensemble de l'environnement est simulé sous VMware Workstation : un datacenter à échelle réduite
+      de 8 machines virtuelles (1 passerelle pfSense et 7 serveurs Ubuntu Server) reproduisant une
+      architecture 3 tiers (web, application, données) sur un réseau plat, sans micro-segmentation au départ.
+      Ce choix garantit un contrôle total, des tests reproductibles et une documentation précise de chaque composant.
+    </p>
+
+    <h2>Outils & Technologies utilisés</h2>
+
+    <div class="tools-category">
+      <div class="tools-category-title">Virtualisation & réseau</div>
+      <div class="tools-grid">
+        <div class="tool-pill"><span class="icon">🖥️</span> VMware Workstation <small>8 VMs</small></div>
+        <div class="tool-pill"><span class="icon">🐧</span> Ubuntu Server <small>LTS</small></div>
+        <div class="tool-pill"><span class="icon">🔥</span> pfSense <small>passerelle / firewall</small></div>
+      </div>
+    </div>
+
+    <div class="tools-category">
+      <div class="tools-category-title">Collecte des flux & des logs</div>
+      <div class="tools-grid">
+        <div class="tool-pill"><span class="icon">📡</span> softflowd <small>export NetFlow v9</small></div>
+        <div class="tool-pill"><span class="icon">📥</span> nfcapd / nfdump</div>
+        <div class="tool-pill"><span class="icon">📜</span> rsyslog <small>syslog centralisé</small></div>
+      </div>
+    </div>
+
+    <div class="tools-category">
+      <div class="tools-category-title">Analyse & cartographie</div>
+      <div class="tools-grid">
+        <div class="tool-pill"><span class="icon">🐍</span> Python <small>pandas</small></div>
+        <div class="tool-pill"><span class="icon">🕸️</span> Neo4j <small>base graphe</small></div>
+        <div class="tool-pill"><span class="icon">🔍</span> Cypher</div>
+        <div class="tool-pill"><span class="icon">🐳</span> Docker</div>
+      </div>
+    </div>
+
+    <div class="tools-category">
+      <div class="tools-category-title">Services simulés (architecture 3 tiers)</div>
+      <div class="tools-grid">
+        <div class="tool-pill"><span class="icon">🌐</span> Nginx</div>
+        <div class="tool-pill"><span class="icon">🪶</span> Apache</div>
+        <div class="tool-pill"><span class="icon">⚙️</span> Serveur HTTP Python</div>
+        <div class="tool-pill"><span class="icon">🗄️</span> PostgreSQL</div>
+        <div class="tool-pill"><span class="icon">📊</span> Prometheus</div>
+        <div class="tool-pill"><span class="icon">🔑</span> SSH</div>
+      </div>
+    </div>
+
+    <h2>Architecture du lab</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Machine</th><th>IP</th><th>Rôle</th><th>Technologies</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>gw-fw01</code></td><td>192.168.10.1</td><td>Passerelle & point de capture des flux</td><td>pfSense, softflowd</td></tr>
+          <tr><td><code>srv-log01</code></td><td>192.168.10.20</td><td>Collecteur central de logs et de flux</td><td>nfcapd, rsyslog, Docker, Neo4j, Python</td></tr>
+          <tr><td><code>srv-web01</code></td><td>192.168.10.11</td><td>Serveur web frontend</td><td>Nginx</td></tr>
+          <tr><td><code>srv-web02</code></td><td>192.168.10.12</td><td>Serveur web (redondance)</td><td>Apache</td></tr>
+          <tr><td><code>srv-app01</code></td><td>192.168.10.13</td><td>Serveur applicatif backend</td><td>Serveur HTTP Python (8080)</td></tr>
+          <tr><td><code>srv-db01</code></td><td>192.168.10.14</td><td>Base de données</td><td>PostgreSQL (5432)</td></tr>
+          <tr><td><code>srv-mon01</code></td><td>192.168.10.15</td><td>Supervision</td><td>Prometheus</td></tr>
+          <tr><td><code>srv-adm01</code></td><td>192.168.10.16</td><td>Poste d'administration (bastion)</td><td>Client SSH</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Réseau interne : VMnet2 (host-only, 192.168.10.0/24). Réseau externe : VMnet8 (NAT) pour les mises à jour.
+    </p>
+
+    <h2>Chaîne de traitement des données</h2>
+    <div class="pipeline">
+      <div class="pipe-step">Serveurs</div><span class="pipe-arrow">→</span>
+      <div class="pipe-step">pfSense + softflowd</div><span class="pipe-arrow">→</span>
+      <div class="pipe-step">nfcapd (UDP 2055)</div><span class="pipe-arrow">→</span>
+      <div class="pipe-step">nfdump (CSV)</div><span class="pipe-arrow">→</span>
+      <div class="pipe-step">Python (filtrage + agrégation)</div><span class="pipe-arrow">→</span>
+      <div class="pipe-step">Neo4j</div>
+    </div>
+    <ul class="feature-list">
+      <li><strong>Collecte réseau :</strong> pfSense capture le trafic du LAN et exporte des enregistrements NetFlow v9 (source, destination, ports, protocole, volume) vers le collecteur, stockés par tranches de 5 minutes</li>
+      <li><strong>Collecte système :</strong> tous les serveurs envoient leurs journaux en syslog TCP/514 vers <code>srv-log01</code>, triés automatiquement par machine et par programme</li>
+      <li><strong>Trafic de test :</strong> scripts générant des flux réalistes (web → application sur 8080, application → base sur 5432, administration SSH vers tous les serveurs)</li>
+      <li><strong>Cartographie :</strong> export CSV via nfdump, agrégation par triplet source / destination / port avec Python, import dans Neo4j (serveurs = nœuds, flux = relations)</li>
+    </ul>
+
+    <h2>Résultats obtenus</h2>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-value">3 153</div><div class="stat-label">flux enregistrés</div></div>
+      <div class="stat-card"><div class="stat-value">~452 Mo</div><div class="stat-label">de données collectées</div></div>
+      <div class="stat-card"><div class="stat-value">19</div><div class="stat-label">relations identifiées</div></div>
+      <div class="stat-card"><div class="stat-value">8</div><div class="stat-label">machines cartographiées</div></div>
+    </div>
+    <p>
+      La chaîne de collecte a été validée de bout en bout. Le filtrage sur les ports de service connus puis
+      l'agrégation ont ramené une cartographie initiale illisible (plus de 1 400 relations) à 19 relations
+      claires, qui reflètent fidèlement l'architecture simulée.
+    </p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Flux observé</th><th>Port / service</th><th>Nb de flux</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>srv-web01 → srv-app01</td><td>8080 / HTTP applicatif</td><td>582</td></tr>
+          <tr><td>srv-web02 → srv-app01</td><td>8080 / HTTP applicatif</td><td>736</td></tr>
+          <tr><td>srv-app01 → srv-db01</td><td>5432 / PostgreSQL</td><td>784</td></tr>
+          <tr><td>srv-adm01 → tous les serveurs</td><td>22 / SSH</td><td>94 par serveur</td></tr>
+          <tr><td>Toutes les VMs → srv-log01</td><td>514 / Syslog</td><td>variable</td></tr>
+          <tr><td>gw-fw01 → srv-log01</td><td>2055 / NetFlow</td><td>41</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Difficultés rencontrées</h2>
+    <ul class="feature-list">
+      <li><strong>Conflit d'adresse IP</strong> entre le poste hôte et pfSense : alignement du sous-réseau VMnet2 et IP fixe dédiée à l'hôte</li>
+      <li><strong>Fichiers NetFlow vides :</strong> aucun trafic ne traversait réellement la passerelle ; trafic désormais généré depuis une VM utilisant pfSense comme passerelle par défaut</li>
+      <li><strong>Dossiers non créés par rsyslog :</strong> permissions corrigées sur <code>/var/log/remote</code></li>
+      <li><strong>Cartographie illisible :</strong> ports éphémères et flux de réponse exclus par filtrage sur les ports de service avant agrégation</li>
+    </ul>
+
+    <h2>Étapes de finalisation</h2>
+    <ul class="feature-list">
+      <li>Observation étendue du trafic (redémarrages, pics de charge, connexions non prévues)</li>
+      <li>Validation fonctionnelle de la légitimité de chaque flux observé</li>
+      <li>Regroupement des serveurs par zone logique (web, application, données, administration, supervision) dans Neo4j</li>
+      <li>Traduction du graphe en règles de micro-segmentation (allow-list) pour pfSense</li>
+      <li>Déploiement des règles en mode audit (journalisation sans blocage), ajustements, puis documentation de la version finale</li>
+    </ul>
+
+    <h2>Apports sécurité</h2>
+    <ul class="feature-list">
+      <li>Visibilité complète sur les communications internes</li>
+      <li>Réduction de la surface d'attaque grâce à une politique allow-list (tout ce qui n'est pas listé est refusé)</li>
+      <li>Limitation des mouvements latéraux en cas de compromission</li>
+      <li>Base documentée pour les audits et la mise en conformité</li>
+    </ul>
+
+  </div>
+  <a href='../index.html' class='btn retour'>Retour</a>
+</body>
+</html>
