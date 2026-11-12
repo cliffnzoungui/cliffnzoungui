@@ -781,3 +781,10 @@ footer span { color: var(--accent); }
   .btn { padding: 11px 20px; font-size: 0.82rem; }
   .form-submit { align-self: stretch; text-align: center; }
 }
+
+.skill-desc {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
