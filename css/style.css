@@ -788,3 +788,13 @@ footer span { color: var(--accent); }
   line-height: 1.5;
   margin: 0 0 14px;
 }
+/* À ajouter à la fin de css/style.css */
+.project-date {
+  display: inline-block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent2);
+  opacity: 0.85;
+  margin: -0.2rem 0 0.8rem;
+  letter-spacing: 0.02em;
+}
