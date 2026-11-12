@@ -75,7 +75,7 @@
             onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
           >
           <span class="school-logo-fallback" style="display:none;">🎓</span>
-          <span>EMSI Maroc</span>
+          <span>EMSI Maroc · depuis 2022</span>
           <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="opacity:0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>
       </div>
@@ -89,15 +89,14 @@
         <a href="#certifs" class="btn btn-ghost">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           Certifications
-      <a href="assets/certifs/cliffcv.pdf" class="btn btn-outline" target="_blank">
-
-        
-  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-  Voir CV
-</a>
+        </a>
+        <a href="assets/certifs/cliffcv.pdf" class="btn btn-outline" target="_blank">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          Voir CV
+        </a>
       </div>
     </div>
     <div class="scroll-hint">
@@ -111,71 +110,107 @@
     <div class="section-header reveal">
       <div class="section-tag">// 01 — expériences</div>
       <h2 class="section-title">Projets & Expériences pro</h2>
-      <p class="section-desc">Quelques projets réalisés durant mes études et mes stages.</p>
+      <p class="section-desc">Quelques projets réalisés durant mes études et mes stages (EMSI, 2022 – 2026).</p>
     </div>
     <div class="projects-grid">
 
-      <a href="projects/projet1.html" class="project-card reveal">
-        <div class="project-icon">📱 </div>
-        <h3>Application de signalisation d'incidents</h3>
-        <p>Conception et réalisation d'une application interne permettant aux employés de déclarer rapidement les incidents en temps réel.</p>
-        <div class="project-tags">
-          <span class="tag">Web App</span>
-          <span class="tag green">Incident Mgmt</span>
+      <!-- ═════════ CYBERSÉCURITÉ EN PREMIER ═════════ -->
+
+      <!-- Wazuh -->
+      <a href="projects/projet6.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Projet PFA</div>
+        <div class="project-icon">🛡️</div>
+        <h3>Plateforme de Détection d’Intrusion avec Wazuh</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>Mise en place d'une solution complète de détection et de supervision de la sécurité des systèmes. Déploiement de Wazuh pour la collecte des logs, la détection d’intrusions (brute force, scan de ports, attaques web) et la génération d’alertes en temps réel via un dashboard centralisé.</p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🛡️</span><span>Wazuh</span></div>
+          <div class="stack-item"><span class="stack-icon">📊</span><span>OpenSearch</span></div>
+          <div class="stack-item"><span class="stack-icon">📈</span><span>Dashboard</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
         </div>
+
+        <div class="project-tags">
+          <span class="tag">SIEM</span>
+          <span class="tag green">IDS</span>
+          <span class="tag purple">SOC</span>
+        </div>
+
         <div class="arrow-link">
           Voir le projet
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
       </a>
 
-      <a href="projects/projet2.html" class="project-card reveal">
-        <div class="project-icon">💻</div>
-        <h3>Application C++ — Gestion Bancaire POO</h3>
-        <p>Application de gestion bancaire développée en C++ avec les principes de la programmation orientée objet.</p>
-        <div class="project-tags">
-          <span class="tag">C++</span>
-          <span class="tag purple">POO</span>
+      <!-- Cartographie des flux (NOUVEAU) -->
+      <a href="projects/projet7.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Stage</div>
+        <div class="project-icon">🗺️</div>
+        <h3>Cartographie des Flux Réseau</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>Stage consacré à la cartographie des flux réseau : identification et documentation des échanges entre systèmes, analyse du trafic, et mise en évidence des flux autorisés, inutiles ou à risque afin de renforcer la sécurité et la segmentation de l'infrastructure.</p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🦈</span><span>Wireshark</span></div>
+          <div class="stack-item"><span class="stack-icon">🔎</span><span>Nmap</span></div>
+          <div class="stack-item"><span class="stack-icon">🗂️</span><span>Matrice de flux</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
         </div>
+
+        <div class="project-tags">
+          <span class="tag">Cybersécurité</span>
+          <span class="tag green">Flux réseau</span>
+          <span class="tag purple">Segmentation</span>
+        </div>
+
         <div class="arrow-link">
           Voir le projet
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
       </a>
 
-      <a href="projects/projet3.html" class="project-card reveal">
-        <div class="project-icon">🌐</div>
-        <h3>Stage — LPRI · Casablanca</h3>
-        <p>Modernisation de l'infrastructure réseau du Laboratoire Pluridisciplinaire de la Recherche et de l'Innovation.</p>
-        <div class="project-tags">
-          <span class="tag">Réseaux</span>
-          <span class="tag green">Infrastructure</span>
+      <!-- Fonction de hachage -->
+      <a href="https://cliffnzoungui.github.io/Mini-projet-Fonction-de-hachage/" target="_blank" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Mini Projet</div>
+        <div class="project-icon">🔐</div>
+        <h3>Fonction de Hachage Cryptographique</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>
+          Développement d'une application web pédagogique permettant de comprendre
+          le fonctionnement des fonctions de hachage cryptographiques. Le projet
+          permet de générer des empreintes numériques à partir de textes, d'analyser
+          l'intégrité des données et d'illustrer les principes fondamentaux utilisés
+          en cybersécurité pour la protection de l'information.
+        </p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🌐</span><span>HTML5</span></div>
+          <div class="stack-item"><span class="stack-icon">🎨</span><span>CSS3</span></div>
+          <div class="stack-item"><span class="stack-icon">⚡</span><span>JavaScript</span></div>
+          <div class="stack-item"><span class="stack-icon">🔒</span><span>SHA-256</span></div>
         </div>
+
+        <div class="project-tags">
+          <span class="tag">Cybersécurité</span>
+          <span class="tag green">Cryptographie</span>
+          <span class="tag purple">Hashing</span>
+        </div>
+
         <div class="arrow-link">
           Voir le projet
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </div>
       </a>
 
-      <a href="projects/projet4.html" class="project-card reveal">
-        <div class="project-icon">📋</div>
-        <h3>Stage — Lesieur Cristal · Casablanca</h3>
-        <p>Développement d'une application de gestion de contrats pour automatiser les processus internes.</p>
-        <div class="project-tags">
-          <span class="tag">Full Stack</span>
-          <span class="tag purple">Gestion</span>
-        </div>
-        <div class="arrow-link">
-          Voir le projet
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-        </div>
-      </a>
+      <!-- ═════════ RÉSEAUX / INFRA ═════════ -->
 
-      <!-- ── NOUVEAU PROJET ── -->
+      <!-- Supervision -->
       <a href="projects/projet5.html" class="project-card project-card--featured reveal">
         <div class="project-card-badge">Stage</div>
         <div class="project-icon">📡</div>
         <h3>Infrastructure de Supervision de Serveurs Web</h3>
+        <div class="project-date">📅 2024 – 2025 · 3ème année</div>
         <p>Mise en place d'une solution complète de monitoring et d'alerting pour superviser l'état de serveurs web en temps réel. Déploiement de Zabbix et Grafana pour la collecte de métriques et la visualisation des performances.</p>
         <div class="project-stack">
           <div class="stack-item"><span class="stack-icon">🔍</span><span>Zabbix</span></div>
@@ -194,95 +229,71 @@
         </div>
       </a>
 
+      <!-- LPRI -->
+      <a href="projects/projet3.html" class="project-card reveal">
+        <div class="project-icon">🌐</div>
+        <h3>Stage — LPRI · Casablanca</h3>
+        <div class="project-date">📅 2023 – 2024 · 2ème année</div>
+        <p>Modernisation de l'infrastructure réseau du Laboratoire Pluridisciplinaire de la Recherche et de l'Innovation.</p>
+        <div class="project-tags">
+          <span class="tag">Réseaux</span>
+          <span class="tag green">Infrastructure</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
 
-<!-- ── NOUVEAU PROJET WAZUH ── -->
-<a href="projects/projet6.html" class="project-card project-card--featured reveal">
-  <div class="project-card-badge">Projet pfa</div>
-  <div class="project-icon">🛡️</div>
-  <h3>Plateforme de Détection d’Intrusion avec Wazuh</h3>
-  <p>Mise en place d'une solution complète de détection et de supervision de la sécurité des systèmes. Déploiement de Wazuh pour la collecte des logs, la détection d’intrusions (brute force, scan de ports, attaques web) et la génération d’alertes en temps réel via un dashboard centralisé.</p>
-  
-  <div class="project-stack">
-    <div class="stack-item"><span class="stack-icon">🛡️</span><span>Wazuh</span></div>
-    <div class="stack-item"><span class="stack-icon">📊</span><span>OpenSearch</span></div>
-    <div class="stack-item"><span class="stack-icon">📈</span><span>Dashboard</span></div>
-    <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
-  </div>
-  
-  <div class="project-tags">
-    <span class="tag">SIEM</span>
-    <span class="tag green">IDS</span>
-    <span class="tag purple">SOC</span>
-  </div>
-  
-  <div class="arrow-link">
-    Voir le projet
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M7 17L17 7M17 7H7M17 7v10"/>
-    </svg>
-  </div>
-</a>
+      <!-- ═════════ DÉVELOPPEMENT ═════════ -->
 
+      <!-- Lesieur -->
+      <a href="projects/projet4.html" class="project-card reveal">
+        <div class="project-icon">📋</div>
+        <h3>Stage — Lesieur Cristal · Casablanca</h3>
+        <div class="project-date">📅 2024 – 2025 · 3ème année</div>
+        <p>Développement d'une application de gestion de contrats pour automatiser les processus internes.</p>
+        <div class="project-tags">
+          <span class="tag">Full Stack</span>
+          <span class="tag purple">Gestion</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
 
+      <!-- Incidents -->
+      <a href="projects/projet1.html" class="project-card reveal">
+        <div class="project-icon">📱</div>
+        <h3>Application de signalisation d'incidents</h3>
+        <div class="project-date">📅 2023 – 2024 · 2ème année</div>
+        <p>Conception et réalisation d'une application interne permettant aux employés de déclarer rapidement les incidents en temps réel.</p>
+        <div class="project-tags">
+          <span class="tag">Web App</span>
+          <span class="tag green">Incident Mgmt</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
 
-
-
-      <!-- ── NOUVEAU PROJET FONCTION DE HACHAGE ── -->
-<a href="https://cliffnzoungui.github.io/Mini-projet-Fonction-de-hachage/" target="_blank" class="project-card project-card--featured reveal">
-  <div class="project-card-badge">Mini Projet</div>
-  <div class="project-icon">🔐</div>
-
-  <h3>Fonction de Hachage Cryptographique</h3>
-
-  <p>
-    Développement d'une application web pédagogique permettant de comprendre
-    le fonctionnement des fonctions de hachage cryptographiques. Le projet
-    permet de générer des empreintes numériques à partir de textes, d'analyser
-    l'intégrité des données et d'illustrer les principes fondamentaux utilisés
-    en cybersécurité pour la protection de l'information.
-  </p>
-
-  <div class="project-stack">
-    <div class="stack-item">
-      <span class="stack-icon">🌐</span>
-      <span>HTML5</span>
-    </div>
-
-    <div class="stack-item">
-      <span class="stack-icon">🎨</span>
-      <span>CSS3</span>
-    </div>
-
-    <div class="stack-item">
-      <span class="stack-icon">⚡</span>
-      <span>JavaScript</span>
-    </div>
-
-    <div class="stack-item">
-      <span class="stack-icon">🔒</span>
-      <span>SHA-256</span>
-    </div>
-  </div>
-
-  <div class="project-tags">
-    <span class="tag">Cybersécurité</span>
-    <span class="tag green">Cryptographie</span>
-    <span class="tag purple">Hashing</span>
-  </div>
-
-  <div class="arrow-link">
-    Voir le projet
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M7 17L17 7M17 7H7M17 7v10"/>
-    </svg>
-  </div>
-</a>
-
-
-
-
-
-      
+      <!-- C++ -->
+      <a href="projects/projet2.html" class="project-card reveal">
+        <div class="project-icon">💻</div>
+        <h3>Application C++ — Gestion Bancaire POO</h3>
+        <div class="project-date">📅 2022 – 2023 · 1ère année</div>
+        <p>Application de gestion bancaire développée en C++ avec les principes de la programmation orientée objet.</p>
+        <div class="project-tags">
+          <span class="tag">C++</span>
+          <span class="tag purple">POO</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
 
     </div>
   </section>
@@ -324,7 +335,6 @@
         <div class="skill-list">
           <div class="skill-pill active">Zabbix</div>
           <div class="skill-pill active">wazuh</div>
-
           <div class="skill-pill active">Grafana</div>
           <div class="skill-pill active">Prometheus</div>
           <div class="skill-pill">Nagios</div>
@@ -486,13 +496,11 @@
     <div class="section-header reveal">
       <div class="section-tag">// 03 — diplômes</div>
       <h2 class="section-title">Certifications</h2>
-      <p class="section-desc">Entrez le mot de passe pour consulter un certificat (<code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">VOIR CV</code></p>)
+      <p class="section-desc">Entrez le mot de passe pour consulter un certificat (<code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">VOIR CV</code>)</p>
     </div>
     <div class="certifs-grid">
 
-
-
-  <div class="certif-card reveal">
+      <div class="certif-card reveal">
         <div class="certif-header">
           <div class="certif-icon">🛡️</div>
           <div>
@@ -513,8 +521,6 @@
         </div>
       </div>
 
-
-      
       <div class="certif-card reveal">
         <div class="certif-header">
           <div class="certif-icon">📚</div>
@@ -620,8 +626,6 @@
         </div>
       </div>
 
-
-
     </div>
   </section>
 
@@ -660,7 +664,6 @@
       </div>
 
       <!-- ✅ FORMULAIRE FORMSPREE -->
-      <!-- 👉 Remplace TON_ID_FORMSPREE par ton ID obtenu sur formspree.io/register -->
       <div class="contact-form reveal">
         <form id="contact-form" action="https://formspree.io/f/mbdzqwab" method="POST">
           <div class="form-group">
