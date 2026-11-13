@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliff Nzoungui | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#home"><span>cliff</span>nz<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifs">Certif</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span>🌞</span>
+        <div class="toggle-knob"></div>
+        <span>🌙</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#home"     onclick="closeMobileMenu()">Home</a>
+    <a href="#projects" onclick="closeMobileMenu()">Projets</a>
+    <a href="#skills"   onclick="closeMobileMenu()">Skills</a>
+    <a href="#certifs"  onclick="closeMobileMenu()">Certif</a>
+    <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Disponible pour stage / alternance</div>
+      <div class="profile-ring">
+        <img
+          src="assets/certifs/image.png"
+          class="profile"
+          alt="Cliff Nz"
+          onerror="this.src='https://ui-avatars.com/api/?name=Cliff+Nz&size=140&background=38bdf8&color=060a12&bold=true&font-size=0.35'"
+        >
+      </div>
+      <h1>Cliff <span class="highlight">NZOUNGUI</span></h1>
+
+      <!-- Nationalité + École -->
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="flag-icon">🇬🇦</span>
+          <span>Gabonais</span>
+        </div>
+        <div class="hero-meta-divider"></div>
+        <a href="https://www.emsi.ma" target="_blank" rel="noopener noreferrer" class="hero-meta-item hero-school-link">
+          <img
+            src="https://www.emsi.ma/wp-content/uploads/2021/03/logo-emsi.png"
+            alt="EMSI"
+            class="school-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"
+          >
+          <span class="school-logo-fallback" style="display:none;">🎓</span>
+          <span>EMSI Maroc · depuis 2022</span>
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="opacity:0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+
+      <p class="hero-subtitle">  <code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">//</code>  Master Cybersécurité et infrastructures réseau · 4ème année</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M3 17l9 6 9-6"/></svg>
+          Projets
+        </a>
+        <a href="#certifs" class="btn btn-ghost">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          Certifications
+        </a>
+        <a href="assets/certifs/cliffcv.pdf" class="btn btn-outline" target="_blank">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          Voir CV
+        </a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <div class="section-tag">// 01 — expériences</div>
+      <h2 class="section-title">Projets & Expériences pro</h2>
+      <p class="section-desc">Quelques projets réalisés durant mes études et mes stages (EMSI, 2022 – 2026).</p>
+    </div>
+    <div class="projects-grid">
+
+      <!-- ═════════ CYBERSÉCURITÉ EN PREMIER ═════════ -->
+
+      <!-- Wazuh -->
+      <a href="projects/projet6.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Projet PFA</div>
+        <div class="project-icon">🛡️</div>
+        <h3>Plateforme de Détection d’Intrusion avec Wazuh</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>Mise en place d'une solution complète de détection et de supervision de la sécurité des systèmes. Déploiement de Wazuh pour la collecte des logs, la détection d’intrusions (brute force, scan de ports, attaques web) et la génération d’alertes en temps réel via un dashboard centralisé.</p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🛡️</span><span>Wazuh</span></div>
+          <div class="stack-item"><span class="stack-icon">📊</span><span>OpenSearch</span></div>
+          <div class="stack-item"><span class="stack-icon">📈</span><span>Dashboard</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
+        </div>
+
+        <div class="project-tags">
+          <span class="tag">SIEM</span>
+          <span class="tag green">IDS</span>
+          <span class="tag purple">SOC</span>
+        </div>
+
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- Cartographie des flux (NOUVEAU) -->
+      <a href="projects/rojects/projet7.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Stage</div>
+        <div class="project-icon">🗺️</div>
+        <h3>Analyse des Flux Inter-Serveurs & Cartographie des Dépendances</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>Conception d'une plateforme d'analyse des flux de communication entre serveurs afin de cartographier les dépendances applicatives et préparer la micro-segmentation. Mise en place d'un lab VMware Workstation de 8 machines virtuelles simulant un datacenter on-premise : observation des flux réels, identification des communications légitimes et superflues, puis définition de règles de filtrage pour réduire la surface d'attaque et limiter les mouvements latéraux.</p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🖥️</span><span>VMware Workstation</span></div>
+          <div class="stack-item"><span class="stack-icon">🗺️</span><span>Cartographie des dépendances</span></div>
+          <div class="stack-item"><span class="stack-icon">🧱</span><span>Micro-segmentation</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
+        </div>
+
+        <div class="project-tags">
+          <span class="tag">Micro-segmentation</span>
+          <span class="tag green">Flux réseau</span>
+          <span class="tag purple">Lab 8 VMs</span>
+        </div>
+
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- Fonction de hachage -->
+      <a href="https://cliffnzoungui.github.io/Mini-projet-Fonction-de-hachage/" target="_blank" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Mini Projet</div>
+        <div class="project-icon">🔐</div>
+        <h3>Fonction de Hachage Cryptographique</h3>
+        <div class="project-date">📅 2025 – 2026 · 4ème année</div>
+        <p>
+          Développement d'une application web pédagogique permettant de comprendre
+          le fonctionnement des fonctions de hachage cryptographiques. Le projet
+          permet de générer des empreintes numériques à partir de textes, d'analyser
+          l'intégrité des données et d'illustrer les principes fondamentaux utilisés
+          en cybersécurité pour la protection de l'information.
+        </p>
+
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🌐</span><span>HTML5</span></div>
+          <div class="stack-item"><span class="stack-icon">🎨</span><span>CSS3</span></div>
+          <div class="stack-item"><span class="stack-icon">⚡</span><span>JavaScript</span></div>
+          <div class="stack-item"><span class="stack-icon">🔒</span><span>SHA-256</span></div>
+        </div>
+
+        <div class="project-tags">
+          <span class="tag">Cybersécurité</span>
+          <span class="tag green">Cryptographie</span>
+          <span class="tag purple">Hashing</span>
+        </div>
+
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- ═════════ RÉSEAUX / INFRA ═════════ -->
+
+      <!-- Supervision -->
+      <a href="projects/projet5.html" class="project-card project-card--featured reveal">
+        <div class="project-card-badge">Stage</div>
+        <div class="project-icon">📡</div>
+        <h3>Infrastructure de Supervision de Serveurs Web</h3>
+        <div class="project-date">📅 2024 – 2025 · 3ème année</div>
+        <p>Mise en place d'une solution complète de monitoring et d'alerting pour superviser l'état de serveurs web en temps réel. Déploiement de Zabbix et Grafana pour la collecte de métriques et la visualisation des performances.</p>
+        <div class="project-stack">
+          <div class="stack-item"><span class="stack-icon">🔍</span><span>Zabbix</span></div>
+          <div class="stack-item"><span class="stack-icon">📊</span><span>Grafana</span></div>
+          <div class="stack-item"><span class="stack-icon">🔥</span><span>Prometheus</span></div>
+          <div class="stack-item"><span class="stack-icon">🐧</span><span>Linux</span></div>
+        </div>
+        <div class="project-tags">
+          <span class="tag">Monitoring</span>
+          <span class="tag green">SNMP</span>
+          <span class="tag purple">DevOps</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- LPRI -->
+      <a href="projects/projet3.html" class="project-card reveal">
+        <div class="project-icon">🌐</div>
+        <h3>Stage — LPRI · Casablanca</h3>
+        <div class="project-date">📅 2023 – 2024 · 2ème année</div>
+        <p>Modernisation de l'infrastructure réseau du Laboratoire Pluridisciplinaire de la Recherche et de l'Innovation.</p>
+        <div class="project-tags">
+          <span class="tag">Réseaux</span>
+          <span class="tag green">Infrastructure</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- ═════════ DÉVELOPPEMENT ═════════ -->
+
+      <!-- Lesieur -->
+      <a href="projects/projet4.html" class="project-card reveal">
+        <div class="project-icon">📋</div>
+        <h3>Stage — Lesieur Cristal · Casablanca</h3>
+        <div class="project-date">📅 2024 – 2025 · 3ème année</div>
+        <p>Développement d'une application de gestion de contrats pour automatiser les processus internes.</p>
+        <div class="project-tags">
+          <span class="tag">Full Stack</span>
+          <span class="tag purple">Gestion</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- Incidents -->
+      <a href="projects/projet1.html" class="project-card reveal">
+        <div class="project-icon">📱</div>
+        <h3>Application de signalisation d'incidents</h3>
+        <div class="project-date">📅 2023 – 2024 · 2ème année</div>
+        <p>Conception et réalisation d'une application interne permettant aux employés de déclarer rapidement les incidents en temps réel.</p>
+        <div class="project-tags">
+          <span class="tag">Web App</span>
+          <span class="tag green">Incident Mgmt</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+      <!-- C++ -->
+      <a href="projects/projet2.html" class="project-card reveal">
+        <div class="project-icon">💻</div>
+        <h3>Application C++ — Gestion Bancaire POO</h3>
+        <div class="project-date">📅 2022 – 2023 · 1ère année</div>
+        <p>Application de gestion bancaire développée en C++ avec les principes de la programmation orientée objet.</p>
+        <div class="project-tags">
+          <span class="tag">C++</span>
+          <span class="tag purple">POO</span>
+        </div>
+        <div class="arrow-link">
+          Voir le projet
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── COMPÉTENCES ── -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <div class="section-tag">// 02 — stack technique</div>
+      <h2 class="section-title">Compétences & Technologies</h2>
+      <p class="section-desc">Les outils et langages que j'ai utilisés en projet et en stage.</p>
+    </div>
+    <div class="skills-grid">
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🌐</span>
+          Réseaux & Systèmes
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">Cisco IOS</div>
+          <div class="skill-pill">VLAN / VPN</div>
+          <div class="skill-pill">TCP/IP</div>
+          <div class="skill-pill">SNMP</div>
+          <div class="skill-pill">DNS / DHCP</div>
+          <div class="skill-pill">Linux</div>
+          <div class="skill-pill">Windows Server</div>
+          <div class="skill-pill">Cryptographie</div>
+          <div class="skill-pill">blockchaine</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">📡</span>
+          Supervision & Monitoring
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill active">Zabbix</div>
+          <div class="skill-pill active">wazuh</div>
+          <div class="skill-pill active">Grafana</div>
+          <div class="skill-pill active">Prometheus</div>
+          <div class="skill-pill">Nagios</div>
+          <div class="skill-pill">Alerting</div>
+          <div class="skill-pill">Dashboards</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">💻</span>
+          Développement
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">JavaScript</div>
+          <div class="skill-pill">c/C++</div>
+          <div class="skill-pill">HTML / CSS</div>
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">Bash / Shell</div>
+          <div class="skill-pill">SQL</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">☁️</span>
+          Cloud & Virtualisation
+        </div>
+        <div class="skill-list">
+          <div class="skill-pill">VMware</div>
+          <div class="skill-pill">VirtualBox</div>
+          <div class="skill-pill">Docker</div>
+          <div class="skill-pill">Hyper-V</div>
+          <div class="skill-pill">Cloud Computing</div>
+        </div>
+      </div>
+
+      <!-- ── NOUVEAUX ACQUIS CYBERSÉCURITÉ ── -->
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🔎</span>
+          Forensique numérique
+        </div>
+        <p class="skill-desc">Collecte, préservation et analyse de preuves numériques après un incident, en garantissant l'intégrité et la traçabilité.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">Autopsy</div>
+          <div class="skill-pill active">FTK Imager</div>
+          <div class="skill-pill active">Volatility</div>
+          <div class="skill-pill active">Wireshark</div>
+          <div class="skill-pill">Analyse mémoire</div>
+          <div class="skill-pill">Analyse de logs</div>
+          <div class="skill-pill">Hash MD5 / SHA</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🕵️</span>
+          Ethical Hacking
+        </div>
+        <p class="skill-desc">Tests d'intrusion autorisés pour identifier et exploiter des vulnérabilités, puis recommander des corrections.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">Kali Linux</div>
+          <div class="skill-pill active">Nmap</div>
+          <div class="skill-pill active">Metasploit</div>
+          <div class="skill-pill active">Burp Suite</div>
+          <div class="skill-pill">Énumération</div>
+          <div class="skill-pill">Escalade de privilèges</div>
+          <div class="skill-pill">OWASP Top 10</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🤖</span>
+          IA pour la Cybersécurité
+        </div>
+        <p class="skill-desc">Utilisation du machine learning pour détecter des menaces et des comportements anormaux à partir de données de sécurité.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">Python</div>
+          <div class="skill-pill active">scikit-learn</div>
+          <div class="skill-pill active">Pandas</div>
+          <div class="skill-pill">Détection d'anomalies</div>
+          <div class="skill-pill">Classification</div>
+          <div class="skill-pill">Évaluation de modèles</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">🔐</span>
+          Protocoles de Sécurité & Cryptanalyse
+        </div>
+        <p class="skill-desc">Étude du fonctionnement des protocoles sécurisés et des méthodes d'analyse des systèmes cryptographiques.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">OpenSSL</div>
+          <div class="skill-pill active">Wireshark</div>
+          <div class="skill-pill active">Hashcat</div>
+          <div class="skill-pill">TLS / IPsec / SSH</div>
+          <div class="skill-pill">PKI & Certificats</div>
+          <div class="skill-pill">Chiffrement sym. / asym.</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">☁️</span>
+          Sécurité en Cloud
+        </div>
+        <p class="skill-desc">Protection des environnements cloud : identités et accès, configuration sécurisée, segmentation et supervision.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">AWS Academy</div>
+          <div class="skill-pill">IAM / Moindre privilège</div>
+          <div class="skill-pill">Segmentation réseau</div>
+          <div class="skill-pill">Chiffrement des données</div>
+          <div class="skill-pill">Responsabilité partagée</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">📋</span>
+          Audit en Cybersécurité
+        </div>
+        <p class="skill-desc">Évaluation méthodique du niveau de sécurité d'un système par rapport à des référentiels, avec plan d'actions correctives.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">Lynis</div>
+          <div class="skill-pill active">OpenVAS</div>
+          <div class="skill-pill active">CIS Benchmarks</div>
+          <div class="skill-pill">Audit de configuration</div>
+          <div class="skill-pill">Analyse d'écarts</div>
+          <div class="skill-pill">ISO 27001</div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">
+          <span class="skill-group-icon">⚖️</span>
+          Gestion des Risques
+        </div>
+        <p class="skill-desc">Identification, évaluation et traitement des risques pour prioriser les mesures de protection.</p>
+        <div class="skill-list">
+          <div class="skill-pill active">EBIOS RM</div>
+          <div class="skill-pill active">ISO 27005</div>
+          <div class="skill-pill">Matrice de risques</div>
+          <div class="skill-pill">Scénarios de menace</div>
+          <div class="skill-pill">Plan de traitement</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section id="certifs">
+    <div class="section-header reveal">
+      <div class="section-tag">// 03 — diplômes</div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-desc">Entrez le mot de passe pour consulter un certificat (<code style="font-family:'Space Mono',monospace;color:var(--accent2);font-size:0.8rem;">VOIR CV</code>)</p>
+    </div>
+    <div class="certifs-grid">
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🛡️</div>
+          <div>
+            <div class="certif-name"> Cisco introduction-to-cybersecurity  </div>
+            <div class="certif-issuer">Certification cybersecurity</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/Cisco introduction-to-cybersecurity.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">📚</div>
+          <div>
+            <div class="certif-name">Business English</div>
+            <div class="certif-issuer">Certification Langue</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/ENGLISH.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">⚡</div>
+          <div>
+            <div class="certif-name">Interactivity with JavaScript</div>
+            <div class="certif-issuer">Développement Web</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/js.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🔷</div>
+          <div>
+            <div class="certif-name">Programmation OO en C++</div>
+            <div class="certif-issuer">Génie Logiciel</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/C++.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">☁️</div>
+          <div>
+            <div class="certif-name">Virtualisation & Cloud Engineer</div>
+            <div class="certif-issuer">Infrastructure Cloud</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/vr.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-header">
+          <div class="certif-icon">🚀</div>
+          <div>
+            <div class="certif-name">JavaScript Avancé</div>
+            <div class="certif-issuer">Développement Application</div>
+          </div>
+        </div>
+        <div class="certif-unlock">
+          <div class="certif-unlock-label">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Accès sécurisé
+          </div>
+          <div class="certif-input-row">
+            <input type="password" class="certif-input" placeholder="Mot de passe…" data-path="assets/certifs/dev_js.pdf">
+            <button class="certif-btn" onclick="checkCertif(this)">Ouvrir →</button>
+          </div>
+          <div class="certif-msg"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="separator"><hr></div>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <div class="section-tag">// 04 — contact</div>
+      <h2 class="section-title">Travaillons ensemble</h2>
+      <p class="section-desc">Stage, alternance, ou juste un bonjour — je suis disponible.</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <h3>Restons en contact</h3>
+        <p>Je suis à la recherche d'un stage ou d'une alternance dans les domaines de l'administration système, de la gestion des serveurs, des réseaux et de la cybersécurité. Je reste à votre disposition pour toute information complémentaire ou échange.</p>
+        <div class="contact-links">
+          <a href="mailto:cliffnzoungui1@gmail.com" class="contact-link">
+            <div class="contact-link-icon">📧</div>
+            <span>cliffnzoungui1@gmail.com</span>
+          </a>
+          <a href="https://linkedin.com/in/cliff-nz" class="contact-link" target="_blank">
+            <div class="contact-link-icon">💼</div>
+            <span>linkedin.com/in/cliff-nz</span>
+          </a>
+          <a href="https://github.com/cliffnzoungui" class="contact-link" target="_blank">
+            <div class="contact-link-icon">🐙</div>
+            <span>github.com/cliffnzoungui</span>
+          </a>
+          <a href="assets/certifs/cliffcv.pdf" class="contact-link" download="cliffcv.pdf">
+            <div class="contact-link-icon">📄</div>
+            <span>Télécharger mon CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ✅ FORMULAIRE FORMSPREE -->
+      <div class="contact-form reveal">
+        <form id="contact-form" action="https://formspree.io/f/mbdzqwab" method="POST">
+          <div class="form-group">
+            <label>Nom</label>
+            <input type="text" name="name" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="votre@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Bonjour Cliff, je souhaitais vous contacter au sujet de…" required></textarea>
+          </div>
+          <!-- Champ anti-spam invisible -->
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            Envoyer le message →
+          </button>
+        </form>
+        <!-- Message affiché après envoi -->
+        <div id="form-feedback" class="form-feedback" style="display:none;"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span>© 2026</span> by Cliff Nzoungui — Élève Ingénieur EMSI Maroc
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
