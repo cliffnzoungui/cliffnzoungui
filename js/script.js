@@ -58,7 +58,7 @@ function checkCertif(btn) {
     return;
   }
 
-  if (val === 'recrute_moi') {
+  if (val === 'hire-me') {
     input.classList.remove('error');
     input.classList.add('success');
     msg.textContent = '✓ Accès accordé — ouverture…';
