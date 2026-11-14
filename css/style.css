@@ -798,3 +798,4 @@ footer span { color: var(--accent); }
   margin: -0.2rem 0 0.8rem;
   letter-spacing: 0.02em;
 }
+.certif-view { margin-top: 14px; display: inline-flex; }
