@@ -42,65 +42,7 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ── CERTIF PASSWORD (inline — contourne les bloqueurs de popups) ──
-function checkCertif(btn) {
-  const row   = btn.closest('.certif-unlock');
-  const input = row.querySelector('.certif-input');
-  const msg   = row.querySelector('.certif-msg');
-  const path  = input.dataset.path;
-  const val   = input.value.trim();
-
-  if (!val) {
-    input.classList.add('error');
-    msg.textContent = '⚠ Veuillez entrer le mot de passe.';
-    msg.className = 'certif-msg err';
-    setTimeout(() => input.classList.remove('error'), 400);
-    return;
-  }
-
-  if (val === 'hire-me') {
-    input.classList.remove('error');
-    input.classList.add('success');
-    msg.textContent = '✓ Accès accordé — ouverture…';
-    msg.className = 'certif-msg ok';
-
-    // Bypass bloqueur de popups : créer un <a> et le cliquer
-    const a = document.createElement('a');
-    a.href = path;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    setTimeout(() => {
-      input.value = '';
-      input.classList.remove('success');
-      msg.textContent = '';
-      msg.className = 'certif-msg';
-    }, 3000);
-
-  } else {
-    input.classList.add('error');
-    msg.textContent = '✗ Mot de passe incorrect.';
-    msg.className = 'certif-msg err';
-    input.value = '';
-    setTimeout(() => input.classList.remove('error'), 400);
-  }
-}
-
-// Touche Entrée dans les champs mot de passe certif
-document.querySelectorAll('.certif-input').forEach(input => {
-  input.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      checkCertif(input.closest('.certif-input-row').querySelector('.certif-btn'));
-    }
-  });
-});
-
 // ── CONTACT FORM — FORMSPREE (envoi réel par email) ──
-// 👉 N'oublie pas de remplacer TON_ID_FORMSPREE dans index.html
-//    par ton vrai ID obtenu sur https://formspree.io/register
 const contactForm = document.getElementById('contact-form');
 const feedback    = document.getElementById('form-feedback');
 const submitBtn   = document.getElementById('form-submit-btn');
